@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <!-- 引入 layui.css -->
+    <link rel="stylesheet" href="layui/css/layui.css">
+
+    <!-- 引入 layui.js -->
+    <script src="layui/layui.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <input type="button" onclick="disp_prompt()" value="显示一个提示框" />
+    <script>
+
+        function disp_prompt() {
+            layer.prompt({
+                formType: 0,
+                placeholder: 'Name',
+                title: '请输入值',
+            }, function (value, index, elem) {
+                alert(value); //得到value
+                layer.close(index);
+            });
+            document.querySelector("input.layui-layer-input").placeholder = "Name"
+            $(".layui-layer-content").append("<br/><input type=\"text\" id= \"userid\" class=\"layui-input\" placeholder=\"ID\"/>")
+            $(".layui-layer-content").append("<br/><input type=\"text\" id= \"userdept\" class=\"layui-input\" placeholder=\"Department\"/>")
+            $(".layui-layer-content").append("<br/><input type=\"text\" id= \"placename\" class=\"layui-input\" placeholder=\"Place\"/>")
+        }
+
+
+    </script>
+</body>
+
+</html>
